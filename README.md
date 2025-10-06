@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS secrets (
 ## 👨‍💻 Developer
 **Balaji B**  
 🎓 *IT Postgraduate | Python & SQL Enthusiast | Aspiring Software Engineer*  
-📧 Email: [your-email@example.com]  
+📧 Email: [balajib3561@gmail.com]  
 🌐 GitHub: [balaji-0111](https://github.com/balaji-0111)
 
 ---
