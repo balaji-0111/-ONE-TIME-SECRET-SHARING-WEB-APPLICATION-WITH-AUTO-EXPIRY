@@ -1,27 +1,36 @@
-One-Time Secret Sharing Web App - Full Demo Bundle
---------------------------------------------------
-Files included:
-- app.py           : Flask backend (listens on all interfaces for LAN demo)
-- db_monitor.py    : Live DB monitor that prints inserted/updated rows
-- requirements.txt : pip dependencies
-- database.db      : (created automatically on first run)
-- templates/*      : HTML templates
-- static/*         : CSS and images (bg.jpg if included)
+# 🕵️‍♂️ ONE-TIME SECRET SHARING WEB APPLICATION WITH AUTO EXPIRY 🔐
 
-Quick run (Windows):
-1. Open Terminal in this folder.
-2. Create venv: python -m venv venv
-3. Activate venv: .\venv\Scripts\activate  (or use PowerShell Activate.ps1)
-4. Install deps: pip install -r requirements.txt
-5. Start app: python app.py
-   - The server will run and show your LAN IP in the generated links.
-6. In a second terminal (same folder), run: python db_monitor.py
-   - This prints DB rows every second (encrypted & decrypted).
-7. Open browser on your PC or phone (same Wi-Fi) and go to the app link printed or http://<your-lan-ip>:5000
-8. Create a secret; watch the db_monitor terminal show the insert.
-9. Open the generated link; watch db_monitor show row update/delete.
+Welcome to the **One-Time Secret Sharing Web Application**! 🚀  
+This project allows users to securely share sensitive messages via unique, single-use links.  
+Once the recipient views the secret, it **automatically expires**, ensuring privacy and data security.  
+Perfect for temporary password sharing, private notes, and confidential information exchange! 💬
 
-Notes:
-- db_monitor is for demo only. Remove it for production.
-- The app uses a simple Caesar cipher for demonstration; mention in viva that for production you'd use stronger encryption.
-- If other devices cannot reach the app, check firewall or use ngrok for public tunneling.
+---
+
+## 🌟 Features
+✨ **One-Time Access:** Each secret link can be viewed only once — after that, it auto-deletes.  
+🕒 **Auto Expiry:** Messages automatically expire after a custom set time.  
+🔒 **Secure Storage:** Secrets are temporarily stored in a SQLite database.  
+💻 **User-Friendly Interface:** Simple, responsive, and clean design.  
+📊 **Backend Logging:** Tracks creation, viewing, and expiry events in the terminal.  
+🧩 **Lightweight:** Built using Python Flask — minimal setup and easy to run.  
+
+---
+
+## 🛠️ Tech Stack
+| Layer | Technology Used | Purpose |
+|:--|:--|:--|
+| Frontend | HTML, CSS | To design a simple and modern UI |
+| Backend | Python (Flask Framework) | Handles requests, routing, and DB operations |
+| Database | SQLite3 | Stores secrets temporarily |
+| Others | UUID, Datetime | Generates unique IDs and manages expiry times |
+
+---
+
+## ⚙️ Requirements
+Ensure you have the following installed on your system:
+
+- **Python 3.8 or Higher** 🐍  
+  Check version:
+  ```bash
+  python --version
