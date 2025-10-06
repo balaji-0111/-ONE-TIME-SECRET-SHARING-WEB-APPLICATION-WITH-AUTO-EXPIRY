@@ -1,2 +1,12 @@
-flask
-Pillow
+Flask==3.0.3
+Werkzeug==3.0.3
+Jinja2==3.1.4
+itsdangerous==2.2.0
+click==8.1.7
+⚙️ Optional (recommended for local testing)
+If you’re using a virtual environment (venv) and SQLite viewer tools, you can also safely include:
+
+txt
+Copy code
+python-dotenv==1.0.1
+(Only if you use .env files or plan to deploy.)
