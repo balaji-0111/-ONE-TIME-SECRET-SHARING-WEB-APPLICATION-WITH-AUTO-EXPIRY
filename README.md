@@ -31,94 +31,103 @@ Perfect for temporary password sharing, private notes, and confidential communic
 
 ## ⚙️ Requirements
 
-Ensure you have the following installed before running the project:
+Make sure you have the following installed before running the project:
 
-- **Python 3.8 or higher** 🐍  
-  Check version:
+- **Flask Framework** 🌐  
+  Install using pip:
   ```bash
-  python --version
-Flask Framework 🌐
-Install using pip:
+  pip install flask
+  ```
 
-bash
-Copy code
-pip install flask
-SQLite3 (pre-installed with Python)
+- **SQLite3** (pre-installed with Python)
 
-VS Code or Any IDE 💻 (for development and debugging)
+- **VS Code or Any IDE** 💻 (for development and debugging)
 
-🚀 Getting Started
-1️⃣ Clone the Repository
-bash
-Copy code
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/balaji-0111/One-Time-Secret-Sharing-Web-App.git
-2️⃣ Navigate to the Project Directory
-bash
-Copy code
+```
+
+### 2️⃣ Navigate to the Project Directory
+```bash
 cd One-Time-Secret-Sharing-Web-App
-3️⃣ Create a Virtual Environment (optional)
-bash
-Copy code
+```
+
+### 3️⃣ Create a Virtual Environment (optional)
+```bash
 python -m venv venv
-4️⃣ Activate the Virtual Environment
-On Windows:
-bash
-Copy code
+```
+
+### 4️⃣ Activate the Virtual Environment
+**On Windows:**
+```bash
 venv\Scripts\activate
-On macOS/Linux:
-bash
-Copy code
+```
+**On macOS/Linux:**
+```bash
 source venv/bin/activate
-5️⃣ Install Dependencies
-bash
-Copy code
+```
+
+### 5️⃣ Install Dependencies
+```bash
 pip install flask
-6️⃣ Run the Application
-bash
-Copy code
+```
+
+### 6️⃣ Run the Application
+```bash
 python app.py
-7️⃣ Open in Browser
-Visit the following URL in your web browser:
+```
 
-cpp
-Copy code
+### 7️⃣ Open in Browser
+Visit the following URL in your browser:
+```bash
 http://127.0.0.1:5000/
-🖥️ Usage
-🔐 Creating a Secret
-Enter a message and set an expiry time (in minutes).
+```
 
-Click Generate Link to create a one-time secret URL.
+---
 
-Copy and share the generated link securely.
+## 🖥️ Usage
 
-👀 Viewing a Secret
-Open the shared link once to reveal the message.
+### 🔐 Creating a Secret
+- Enter a message and set an expiry time (in minutes).
+- Click **Generate Link** to create a one-time secret URL.
+- Copy and share the generated link securely.
 
-After viewing, the secret automatically expires.
+### 👀 Viewing a Secret
+- Open the shared link once to reveal the message.
+- After viewing, the secret **automatically expires**.
 
-⏳ Expired or Viewed Secrets
-If the same link is opened again or after expiry,
-the page displays:
-“Secret expired or already viewed.”
+### ⏳ Expired or Viewed Secrets
+If the same link is opened again or after expiry,  
+the page displays: **“Secret expired or already viewed.”**
 
-🧠 Example Demo
-Home Page: Enter your secret message.
+---
 
-Generate Link: App creates a unique one-time URL.
+## 🧠 Example Demo
 
-View Secret: Receiver opens the link and sees the message.
+1. **Home Page:** Enter your secret message.  
+2. **Generate Link:** App creates a unique one-time URL.  
+3. **View Secret:** Receiver opens the link and sees the message.  
+4. **Auto Delete:** Message expires immediately after viewing.  
 
-Auto Delete: Message expires immediately after viewing.
+---
 
-🗄️ Database Workflow
-Action	Database Change	Terminal Log
-Create Secret	Row inserted (is_viewed=0)	[DB] Inserted secret with key=xxxx
-View Secret	Row updated (is_viewed=1)	[DB] Secret xxxx viewed → Marked is_viewed=1
-Expired/Viewed Again	Row deleted	[DB] Secret xxxx expired or already viewed → Deleted
+## 🗄️ Database Workflow
 
-📁 Folder Structure
-php
-Copy code
+| Action | Database Change | Terminal Log |
+|:--|:--|:--|
+| **Create Secret** | Row inserted (`is_viewed=0`) | `[DB] Inserted secret with key=xxxx` |
+| **View Secret** | Row updated (`is_viewed=1`) | `[DB] Secret xxxx viewed → Marked is_viewed=1` |
+| **Expired/Viewed Again** | Row deleted | `[DB] Secret xxxx expired or already viewed → Deleted` |
+
+---
+
+## 📁 Folder Structure
+```bash
 One-Time-Secret-Web-App/
 │
 ├── app.py               # Main Flask backend logic
@@ -132,9 +141,12 @@ One-Time-Secret-Web-App/
 ├── database.db          # SQLite database (auto-generated)
 ├── requirements.txt     # Dependencies
 └── README.md            # Documentation file
-🧾 SQL Schema
-sql
-Copy code
+```
+
+---
+
+## 🧾 SQL Schema
+```sql
 CREATE TABLE IF NOT EXISTS secrets (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     secret_key TEXT UNIQUE,
@@ -143,20 +155,25 @@ CREATE TABLE IF NOT EXISTS secrets (
     expires_at DATETIME,
     is_viewed INTEGER DEFAULT 0
 );
-🛡️ Security Notes
-Each secret link is randomly generated using UUID for uniqueness.
+```
 
-The database automatically removes expired or viewed secrets.
+---
 
-No sensitive data is stored permanently — ensuring complete privacy.
+## 🛡️ Security Notes
+- Each secret link is **randomly generated** using UUID for uniqueness.  
+- The database automatically removes expired or viewed secrets.  
+- No sensitive data is stored permanently — ensuring complete privacy.  
 
-👨‍💻 Developer
-Balaji B
-🎓 IT Postgraduate | Python & SQL Enthusiast | Aspiring Software Engineer
-📧 Email: [your-email@example.com]
-🌐 GitHub: balaji-0111
+---
 
-📜 License
-This project is open-source under the MIT License.
-Feel free to fork, modify, and enhance it! ❤️
+## 👨‍💻 Developer
+**Balaji B**  
+🎓 *IT Postgraduate | Python & SQL Enthusiast | Aspiring Software Engineer*  
+📧 Email: [your-email@example.com]  
+🌐 GitHub: [balaji-0111](https://github.com/balaji-0111)
 
+---
+
+## 📜 License
+This project is open-source under the **MIT License**.  
+Feel free to fork, modify, and enhance it! ❤️  
