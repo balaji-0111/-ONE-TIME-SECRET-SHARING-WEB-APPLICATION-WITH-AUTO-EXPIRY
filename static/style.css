@@ -1,0 +1,35 @@
+:root{
+  --card-bg: rgba(255,255,255,0.95);
+  --muted: #52606d;
+  --accent: #0b63d6;
+  --accent-600: #084ab0;
+  --radius: 12px;
+  --shadow: 0 12px 30px rgba(3,10,25,0.15);
+  --glass-border: rgba(11,99,214,0.08);
+}
+html,body{height:100%;margin:0}
+body{
+  background: url("../images/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  display:flex; align-items:center; justify-content:center; padding:28px;
+}
+.overlay {
+  width: 100%; max-width: 720px; background: var(--card-bg); border-radius: var(--radius);
+  box-shadow: var(--shadow); border: 1px solid var(--glass-border); padding: 28px;
+}
+h1{margin:0;font-size:1.25rem;color:#05203a}
+.lead{font-size:0.95rem;color:var(--muted);margin-top:6px}
+form{margin-top:12px;display:flex;flex-direction:column;gap:12px}
+textarea,input[type="number"]{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #e6edf6;background:#fbfdff;font-size:0.98rem;color:#072032;resize:vertical;min-height:110px}
+textarea::placeholder,input::placeholder{color:#9aa6b2}
+textarea:focus,input:focus{outline:none;border-color:var(--accent);box-shadow:0 8px 24px rgba(11,99,214,0.08)}
+.row{display:flex;gap:12px;align-items:center}
+.small{width:160px;min-width:120px}
+button.primary{padding:11px 16px;border-radius:10px;background:linear-gradient(180deg,var(--accent),var(--accent-600));color:#fff;border:none;cursor:pointer;font-weight:600}
+.link-box{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px;background:#f7fbff;border-radius:10px;border:1px solid #e6f0fb;color:var(--accent-600);font-size:0.95rem;word-break:break-all}
+.copy-btn{padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:0.9rem}
+.secret-box{padding:16px;border-radius:8px;background:#ffffff;border:1px solid #eef5fb;font-size:1.02rem;color:#062037;word-break:break-word}
+.message{font-size:1rem;color:var(--muted);padding:8px 0}
+.note{font-size:0.88rem;color:var(--muted)}
+@media (max-width:640px){.overlay{padding:18px;max-width:92%}.row{flex-direction:column;align-items:stretch}.small{width:100%}.link-box{flex-direction:column;align-items:flex-start;gap:8px}}

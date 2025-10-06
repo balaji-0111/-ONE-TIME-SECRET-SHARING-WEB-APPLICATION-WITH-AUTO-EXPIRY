@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Secure One-Time Secret Sharing</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="overlay">
+    <h1>Secure One-Time Secret Sharing</h1>
+    <p class="lead">Generate a private, one-time link for confidential messages. The secret self-destructs after one view or expiry time.</p>
+
+    <form action="/submit" method="post">
+      <textarea name="secret" placeholder="Type your one-time secret here" required></textarea>
+
+      <div class="row">
+        <input class="small" type="number" name="expiry" value="5" min="1" title="Expiry in minutes">
+        <button type="submit" class="primary">Generate Link</button>
+      </div>
+
+      <div class="note">Tip: Copy the generated link and share it securely. The link will expire after the first view or after the set time.</div>
+    </form>
+  </div>
+</body>
+</html>

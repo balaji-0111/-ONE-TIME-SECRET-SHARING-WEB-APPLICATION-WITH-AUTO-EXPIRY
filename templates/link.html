@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Secret Link — One-Time</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="overlay">
+    <div class="header">
+      <h1>Link Generated</h1>
+      <p class="lead">Share the link securely — it will expire after one view.</p>
+    </div>
+
+    <div class="link-box" id="linkBox">
+      <span id="theLink">{{ link }}</span>
+      <button class="copy-btn" id="copyBtn">Copy</button>
+    </div>
+
+    <p class="note">Tip: Paste the link into a private message. Once opened, it cannot be viewed again.</p>
+  </div>
+
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const theLink = document.getElementById('theLink').innerText;
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(theLink);
+        copyBtn.innerText = 'Copied';
+        setTimeout(()=> copyBtn.innerText = 'Copy', 1500);
+      } catch (e) {
+        alert('Copy failed — please copy manually.');
+      }
+    });
+  </script>
+</body>
+</html>
